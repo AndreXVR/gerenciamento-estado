@@ -10,7 +10,6 @@ import "./index.css";
 import NavBarCustom from "./components/navbar";
 
 function App() {
-  const { isAdmin } = useSelector((state: RootState) => state.apiLogin);
 
   const { loading } = useSelector((state: RootState) => state.apiProduto);
 
@@ -30,12 +29,6 @@ function App() {
         "Loading..."
       ) : (
         <div>
-          {isAdmin ? (
-            <div style={{ height: "100%" }}>
-              <FormularioProduto />
-            </div>
-          ) : null}
-
           <div style={{ overflow: "scroll", height: "400px" }}>
             <ProdutosList />
           </div>

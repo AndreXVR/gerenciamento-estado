@@ -1,7 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import countReducer from "./slices/count.slice";
 import carrinhoReducer from "./slices/carrinho.slice";
-import { apiLoginReducer } from "./slices/api.slice.login";
 
 import storage from "redux-persist/lib/storage";
 import {
@@ -18,7 +17,6 @@ import { apiProdutoReducer } from "./slices/api.slice.produtos";
 
 const rootReducer = combineReducers({
   count: countReducer,
-  apiLogin: apiLoginReducer,
   apiProduto: apiProdutoReducer,
   carrinho: carrinhoReducer,
 });

@@ -6,7 +6,6 @@ import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./pages/produtos";
 import Carrinho from "./pages/carrinho";
 
 const root = ReactDOM.createRoot(
@@ -14,8 +13,7 @@ const root = ReactDOM.createRoot(
 );
 
 const router = createBrowserRouter([
-  { path: "/", element: <Login /> },
-  { path: "/home", element: <App /> },
+  { path: "/", element: <App /> },
   { path: "/cart", element: <Carrinho /> },
 ]);
 

@@ -9,7 +9,6 @@ export default function ProdutosList() {
   const dispatch = useDispatch();
 
   const { produtos } = useSelector((state: RootState) => state.apiProduto);
-  const { isAdmin } = useSelector((state: RootState) => state.apiLogin);
 
   function inserirCarrinho(name: string) {
     dispatch(addProdutoNome(name));
@@ -23,7 +22,7 @@ export default function ProdutosList() {
           <th scope="col">Nome</th>
           <th scope="col">Preço</th>
           <th scope="col">Estoque</th>
-          {isAdmin ? null : <th scope="col">Inserir Carrinho</th>}
+          <th scope="col">Inserir Carrinho</th>
         </tr>
       </thead>
       <tbody>
@@ -35,15 +34,13 @@ export default function ProdutosList() {
               <td>R$ {produto.preco}</td>
               <td>{produto.estoque}</td>
               <td>
-                {isAdmin ? null : (
-                  <Button
-                    onClick={() => {
-                      inserirCarrinho(produto.nome);
-                    }}
-                  >
-                    Inserir no Carrinho
-                  </Button>
-                )}
+                <Button
+                  onClick={() => {
+                    inserirCarrinho(produto.nome);
+                  }}
+                >
+                  Inserir no Carrinho
+                </Button>
               </td>
             </tr>
           );
