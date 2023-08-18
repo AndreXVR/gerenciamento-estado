@@ -8,7 +8,7 @@ import { RootState } from "../redux/store";
 export default function ProdutosList() {
   const dispatch = useDispatch();
 
-  const { produtos } = useSelector((state: RootState) => state.apiProduto);
+  const { produtos } = useSelector((state: RootState) => state.produto);
 
   function inserirCarrinho(name: string) {
     dispatch(addProdutoNome(name));

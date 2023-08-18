@@ -13,11 +13,11 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import { apiProdutoReducer } from "./slices/api.slice.produtos";
+import { produtoReducer } from "./slices/produto.slice";
 
 const rootReducer = combineReducers({
   count: countReducer,
-  apiProduto: apiProdutoReducer,
+  produto: produtoReducer,
   carrinho: carrinhoReducer,
 });
 
