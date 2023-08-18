@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap";
-import FormularioProduto from "./components/formProduto";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "./redux/store";
@@ -19,12 +18,11 @@ function App() {
     dispatch(fetchProdutos());
   }, []);
 
-  return (
+  return (<div>
+    <div style={{ width: "100%" }}>
+      <NavBarCustom />
+    </div>
     <div className="container" style={{ justifyContent: "start" }}>
-      <div style={{ width: "100%" }}>
-        <NavBarCustom />
-      </div>
-
       {loading ? (
         "Loading..."
       ) : (
@@ -35,6 +33,7 @@ function App() {
         </div>
       )}
     </div>
+  </div>
   );
 }
 

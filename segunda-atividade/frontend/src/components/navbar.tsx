@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Navbar, NavbarBrand } from "reactstrap";
-import { RootState } from "../redux/store";
 import { useNavigate } from "react-router-dom";
 import { NavItem, NavLink } from "react-bootstrap";
 
